@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'dexprotector'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    signingConfigs {
+        release {
+            keyAlias 'android'
+            keyPassword 'android'
+            storeFile file("${projectDir}/../sample.keystore")
+            storePassword 'android'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.dexprotector.dynamic.sample"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        signingConfig signingConfigs.release
+    }
+
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ext.set("dexprotector.configFile", "${projectDir}/dexprotector.xml")
+            signingConfig signingConfigs.release
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+}

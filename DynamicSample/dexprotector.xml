@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<dexprotector>
+    <verbose>true</verbose>
+    <optimize>true</optimize>
+    <mainAPK>false</mainAPK>
+    <signMode>release</signMode>
+    <stringEncryption>
+    </stringEncryption>
+    <classEncryption>
+    </classEncryption>
+    <hideAccess>
+    </hideAccess>
+    <nativeLibraryEncryption>
+        <filters>
+                <filter>*.so</filter>
+        </filters>
+    </nativeLibraryEncryption>  
+    <jniObfuscation/>
+    <resourceEncryption>
+        <assets>
+        </assets>        
+    </resourceEncryption>        
+</dexprotector>
