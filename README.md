@@ -2,6 +2,9 @@
 
 This sample is to demonstrate how Dynamic APK Protection mechanism works. 
 
+## Description
+https://dexprotector.com/docs#dynamic-apk-protection
+
 ## Requirements
 - Android Studio or Gradle
 - NDK
